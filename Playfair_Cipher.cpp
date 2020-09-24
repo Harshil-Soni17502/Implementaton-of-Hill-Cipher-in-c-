@@ -213,32 +213,32 @@ void decr(char table[5][5], char message[], int length)
 			}
 		}
 	}
-	// Printing the crresponding encrypted or decrypted text as output.
+	// Printing the corresponding encrypted or decrypted text as output.
 	cout << "According to the key entered the decrypted text is :" << endl << cipher_text;
 }
 
+//Subroutine to encrypt the input text.
 void Encrypt(char key[], char message[])
 {
-	int len1 = remove_spaces(key, strlen(key));
-	int len2 = remove_spaces(message, strlen(message));
-	to_UPPER_CASE(key, len1);
-	to_UPPER_CASE(message, len2);
-
+	int len1 = remove_spaces(key, strlen(key)); // Removing spaces from the key.
+	int len2 = remove_spaces(message, strlen(message)); // Removing spaces from the input message.
+	to_UPPER_CASE(key, len1); // Converting the alphabets of the key to Upper Case.
+	to_UPPER_CASE(message, len2); // Converting the alphabets of the key to Upper Case.
 	char table[5][5];
-	generate_table(table, key, len1);
-	encr(table, message, len2);
+	generate_table(table, key, len1); // Generating the table from the key.
+	encr(table, message, len2); // Decrypting the input message.
 }
 
+//Subroutine to decrypt the output text.
 void Decrypt(char key[], char message[])
 {
-	int len1 = remove_spaces(key, strlen(key));
-	int len2 = remove_spaces(message, strlen(message));
-	to_UPPER_CASE(key, len1);
-	to_UPPER_CASE(message, len2);
-
+	int len1 = remove_spaces(key, strlen(key)); // Removing spaces from the key.
+	int len2 = remove_spaces(message, strlen(message)); // Removing spaces from the input message.
+	to_UPPER_CASE(key, len1); // Converting the alphabets of the key to Upper Case.
+	to_UPPER_CASE(message, len2); // Converting the alphabets of the key to Upper Case.
 	char table[5][5];
-	generate_table(table, key, len1);
-	decr(table, message, len2);
+	generate_table(table, key, len1); // Generating the table from the key.
+	decr(table, message, len2); // Decrypting the input message.
 
 }
 
